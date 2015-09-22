@@ -2,14 +2,18 @@ angular.module('roster', [
   "ngStorage"
 ])
 .controller('MainCtrl', function($scope, $localStorage) {
+  $scope.sortType     = 'num'; // set the default sort type
+  $scope.sortReverse  = false;  // set the default sort order
+  $scope.searchFish   = ''; 
+
   $scope.$storage = $localStorage;
   if (!$scope.$storage.players || $scope.$storage.players.length === 0) {
     localStorage.clear();
     $scope.$storage.players = [
-      {num: 09, last: 'Brees', first: 'Drew', pos: 'QB'}
-      // {num: 1, last: 'Murray', first: 'Kyler', pos: 'QB'},
-      // {num: 2, last: 'Noil', first: 'Speedy', pos: 'WR'},
-      // {num: 3, last: 'Kirk', first: 'Christian', pos: 'WR'}''
+      {num: 09, last: 'Brees', first: 'Drew', pos: 'QB'},
+      {num: 01, last: 'Murray', first: 'Kyler', pos: 'QB'},
+      // {num: 02, last: 'Noil', first: 'Speedy', pos: 'WR'},
+      // {num: 03, last: 'Kirk', first: 'Christian', pos: 'WR'}''
     ];
   }
   $scope.addPlayer = function() {

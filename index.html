@@ -16,6 +16,14 @@
     </div>
 
     <div class="row">
+      <div class="alert alert-info">
+        <p>Sort Type: {{ sortType }}</p>
+        <p>Sort Reverse: {{ sortReverse }}</p>
+        <p>Search Query: {{ searchFish }}</p>
+      </div>
+    </div>
+
+    <div class="row">
       <div class="large-12 medium-12 columns">      
         <!-- <h5>Enter a player</h5> -->
         <form ng-submit="addPlayer()">
@@ -50,15 +58,35 @@
           <table>
             <thead>
               <tr>
-                <th width="147">Number</th>
-                <th width="248">Last Name</th>
-                <th width="248">First Name</th>
-                <th width="165">Position</th>
+                <th width="147">
+                  <a href="#" ng-click="sortType = 'num'; sortReverse = !sortReverse">
+                    Number 
+                    <span ng-show="sortType == 'num'" class="fa fa-caret-down"></span>
+                  </a>
+                </th>
+                <th width="248">
+                  <a href="#" ng-click="sortType = 'last'; sortReverse = !sortReverse">
+                    <span ng-show="sortType == 'last'" class="fa fa-caret-down"></span>
+                    Last Name
+                  </a>
+                </th>
+                <th width="248">
+                  <a href="#" ng-click="sortType = 'first'; sortReverse = !sortReverse">
+                    <span ng-show="sortType == 'first'" class="fa fa-caret-down"></span>
+                    First Name
+                  </a>
+                </th>
+                <th width="165">
+                  <a href="#" ng-click="sortType = 'pos'; sortReverse = !sortReverse">
+                    <span ng-show="sortType == 'pos'" class="fa fa-caret-down"></span>
+                    Position
+                  </a>
+                </th>
                 <th width="125">Remove</th>
               </tr>    
             </thead>
             <tbody>
-              <tr ng-repeat="player in $storage.players">
+              <tr ng-repeat="player in $storage.players | orderBy:sortType:sortReverse">
                 <td>{{player.num}}</td>
                 <td>{{player.last}}</td>
                 <td>{{player.first}}</td>
