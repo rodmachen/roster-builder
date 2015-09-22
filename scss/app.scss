@@ -38,3 +38,27 @@
 //   "foundation/components/type",
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
+
+table tr td {
+  font-size: 1.75rem;
+  font-family: monospace
+}
+
+.title {
+  font-size: 6rem;
+  text-align: center;
+  font-weight: bold;
+  font-family: Copperplate,"Copperplate Gothic Light",fantasy;
+}
+
+body{
+  background-color: #600000;
+}
+
+.row {
+  background-color: #F6F6F6;
+}
+
+.last {
+  height: 100%;
+}
