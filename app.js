@@ -3,7 +3,7 @@ angular.module('roster', [
 ])
 .controller('MainCtrl', function($scope, $localStorage) {
   $scope.$storage = $localStorage;
-  if ($scope.$storage.players.length === 0) {
+  if (!$scope.$storage.players || $scope.$storage.players.length === 0) {
     localStorage.clear();
     $scope.$storage.players = [
       {num: 09, last: 'Brees', first: 'Drew', pos: 'QB'}
