@@ -78,7 +78,7 @@
               </tr>    
             </thead>
             <tbody>
-              <tr ng-repeat="player in $storage.players | orderBy:sortType:sortReverse">
+              <tr ng-repeat="player in players | orderBy:sortType:sortReverse">
                 <td>{{player.num}}</td>
                 <td>{{player.last}}</td>
                 <td>{{player.first}}</td>
@@ -96,6 +96,8 @@
     <script src="js/app.js"></script>
     <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/ngstorage/ngStorage.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.2.9/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
