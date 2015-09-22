@@ -53,12 +53,14 @@
               <th>Last Name</th>
               <th>First Name</th>
               <th>Position</th>
+              <th>Remove</th>
             </tr>
             <tr ng-repeat="player in players">
               <td>{{player.num}}</td>
               <td>{{player.last}}</td>
               <td>{{player.first}}</td>
               <td>{{player.pos}}</td>
+              <td><input type="submit" value="X" class="button tiny" ng-click="removePlayer(player)"/></td>
             </tr>
           </table>
         </div>

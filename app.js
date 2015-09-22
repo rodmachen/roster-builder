@@ -15,4 +15,14 @@ angular.module('roster', [
     $scope.first = '';
     $scope.pos = '';
   };
+
+  $scope.removePlayer = function(player) {
+    for (var i = 0; i < $scope.players.length; i++) {
+      if ($scope.players[i] === player) {
+        $scope.players.splice(i, 1);
+      }
+    }
+
+    // var index = $scope.players.indexOf(item);
+  };
 });
